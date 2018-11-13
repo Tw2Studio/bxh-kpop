@@ -1,4 +1,4 @@
-package com.tw2.bxhkpop.view;
+package com.tw2.bxhkpop.view.activity;
 
 import android.os.Build;
 import android.support.v4.app.FragmentManager;

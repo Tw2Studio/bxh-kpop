@@ -4,7 +4,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
+import com.tw2.bxhkpop.view.fragment.BXHBaiHatFragment;
 import com.tw2.bxhkpop.view.fragment.BXHGroupFragment;
+import com.tw2.bxhkpop.view.fragment.BXHVisualFragment;
 
 public class BXHMainAdapter extends FragmentStatePagerAdapter {
 
@@ -20,10 +22,10 @@ public class BXHMainAdapter extends FragmentStatePagerAdapter {
                 frag = new BXHGroupFragment();
                 break;
             case 1:
-                frag = new BXHGroupFragment();
+                frag = new BXHVisualFragment();
                 break;
             case 2:
-                frag = new BXHGroupFragment();
+                frag = new BXHBaiHatFragment();
                 break;
 
         }
