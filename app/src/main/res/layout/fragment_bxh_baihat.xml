@@ -142,6 +142,7 @@
                 android:padding="8dp"
                 android:text="BÌNH CHỌN"
                 android:textSize="20dp"
+                android:id="@+id/btn_vote_baihat"
                 android:textColor="@android:color/white"
                 android:background="@color/colorPrimary"
                 android:gravity="center"/>
