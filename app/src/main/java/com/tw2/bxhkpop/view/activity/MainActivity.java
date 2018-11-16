@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.tw2.bxhkpop.R;
 import com.tw2.bxhkpop.adapter.HomeAdapter;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,9 +24,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private ViewPager viewPager;
     private HomeAdapter adapter;
-    private LinearLayout nvgHome, nvgKetQua, nvgBXH;
+    private LinearLayout nvgHome, nvgKetQua, nvgBXH, nvgProfile;
     private TextView tvToolbar;
-    private ImageView imageView1, imageView2, imageView3;
+    private ImageView imageView1, imageView2, imageView3, imageView4;
     private List<ImageView> imageViewList = new ArrayList<>();
     private List<Integer> listOne = new ArrayList<>();
     private List<Integer> listTwo = new ArrayList<>();
@@ -47,11 +48,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         listOne.add(R.drawable.ic_home);
         listOne.add(R.drawable.ic_bxh);
         listOne.add(R.drawable.ic_video);
+        listOne.add(R.drawable.ic_profile);
 
 
         listTwo.add(R.drawable.ic_home);
         listTwo.add(R.drawable.ic_bxh);
         listTwo.add(R.drawable.ic_video);
+        listTwo.add(R.drawable.ic_profile);
     }
 
     private void initPager() {
@@ -81,6 +84,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         tvToolbar.setText("VIDEO");
                         setBGTab(2);
                         break;
+                    case 3:
+                        tvToolbar.setText("TÀI KHOẢN");
+                        setBGTab(3);
+                        break;
+
 
                 }
             }
@@ -92,19 +100,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         nvgHome = (LinearLayout) findViewById(R.id.navigation_home);
         nvgKetQua = (LinearLayout) findViewById(R.id.navigation_ketqua);
         nvgBXH = (LinearLayout) findViewById(R.id.navigation_bxh);
+        nvgProfile = (LinearLayout) findViewById(R.id.navigation_profile);
         tvToolbar = (TextView) findViewById(R.id.tv_toolbar);
 
         imageView1 = (ImageView) findViewById(R.id.img_home);
         imageView2 = (ImageView) findViewById(R.id.img_ketqua);
         imageView3 = (ImageView) findViewById(R.id.img_bxh);
+        imageView4 = (ImageView) findViewById(R.id.img_profile);
 
         imageViewList.add(imageView1);
         imageViewList.add(imageView2);
         imageViewList.add(imageView3);
+        imageViewList.add(imageView4);
 
         nvgHome.setOnClickListener(this);
         nvgKetQua.setOnClickListener(this);
         nvgBXH.setOnClickListener(this);
+        nvgProfile.setOnClickListener(this);
     }
 
 
@@ -126,13 +138,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 setBGTab(2);
                 viewPager.setCurrentItem(2);
                 break;
+            case R.id.navigation_profile:
+                tvToolbar.setText("TÀI KHOẢN");
+                setBGTab(3);
+                viewPager.setCurrentItem(3);
+                break;
+
 
         }
     }
 
-    public void setBGTab(int position){
-        for (int i=0;i<imageViewList.size();i++){
-            if (position==i){
+    public void setBGTab(int position) {
+        for (int i = 0; i < imageViewList.size(); i++) {
+            if (position == i) {
                 imageViewList.get(i).setImageResource(listTwo.get(i));
             } else {
                 imageViewList.get(i).setImageResource(listOne.get(i));

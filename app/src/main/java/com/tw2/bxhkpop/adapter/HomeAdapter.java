@@ -3,8 +3,10 @@ package com.tw2.bxhkpop.adapter;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+
 import com.tw2.bxhkpop.view.fragment.BXHFragment;
 import com.tw2.bxhkpop.view.fragment.HomeFragment;
+import com.tw2.bxhkpop.view.fragment.ProfileFragment;
 import com.tw2.bxhkpop.view.fragment.VideoFragment;
 
 public class HomeAdapter extends FragmentStatePagerAdapter {
@@ -26,6 +28,9 @@ public class HomeAdapter extends FragmentStatePagerAdapter {
             case 2:
                 frag = new VideoFragment();
                 break;
+            case 3:
+                frag = new ProfileFragment();
+                break;
 
 
         }
@@ -34,6 +39,6 @@ public class HomeAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public int getCount() {
-        return 3;
+        return 4;
     }
 }

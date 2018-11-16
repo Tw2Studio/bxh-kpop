@@ -32,7 +32,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private CallbackManager callbackManager;
     private FirebaseAuth firebaseAuth;
     private FirebaseAuth.AuthStateListener authStateListener;
-    private String TAG = this.getLocalClassName();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
