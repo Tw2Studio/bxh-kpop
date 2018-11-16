@@ -1,5 +1,8 @@
 package com.tw2.bxhkpop.view.activity;
 
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.Signature;
 import android.os.Build;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.content.ContextCompat;
@@ -13,7 +16,6 @@ import android.widget.TextView;
 
 import com.tw2.bxhkpop.R;
 import com.tw2.bxhkpop.adapter.HomeAdapter;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,6 +37,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().setStatusBarColor(ContextCompat.getColor(getApplicationContext(), R.color.colorPrimaryDark));
         }
+
         initList();
         initView();
         initPager();
